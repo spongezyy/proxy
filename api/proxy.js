@@ -15,12 +15,8 @@ export default async function handler(req, res) {
     const body = await response.text();
     res.status(200).send(body);
   } catch (e) {
-    res.status(500).send('アクセスできませんでした');
+    console.error('Fetch error:', e.message);
+    res.status(500).send('アクセス先に接続できませんでした');
   }
 }
-
-  }
-});
-
-export default app;
 
